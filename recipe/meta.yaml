@@ -11,7 +11,7 @@ source:
   sha256: e350e4dafd95d5bb019af683d7b016cbb2535a62a43b46050d004e924d3664e8
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - ifermi = ifermi.cli:cli
   script: {{ PYTHON }} -m pip install . -vv
