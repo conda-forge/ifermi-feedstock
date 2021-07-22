@@ -1,5 +1,5 @@
 {% set name = "ifermi" %}
-{% set version = "0.2.6" %}
+{% set version = "0.3.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ifermi-{{ version }}.tar.gz
-  sha256: e350e4dafd95d5bb019af683d7b016cbb2535a62a43b46050d004e924d3664e8
+  sha256: 9077961cde4f1803f0bb36ed8a6f2dc24d623bfff3fb4a6688b6c415873417f9
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - ifermi = ifermi.cli:cli
   script: {{ PYTHON }} -m pip install . -vv
@@ -56,7 +56,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Fermi surface generation, analysis and visualisation.'
+  summary: Fermi surface generation, analysis and visualisation.
   description: |
     IFermi is a Python (3.6+) library and set of command-line tools for
     the generation, analysis, and visualisation of Fermi surfaces and
@@ -65,7 +65,7 @@ about:
     and analysis.
   doc_url: https://fermisurfaces.github.io/IFermi
   dev_url: https://github.com/fermisurfaces/IFermi
-  
+
 extra:
   recipe-maintainers:
     - jan-janssen
