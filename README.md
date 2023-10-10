@@ -1,11 +1,11 @@
-About ifermi
-============
+About ifermi-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ifermi-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/fermisurfaces/IFermi
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ifermi-feedstock/blob/main/LICENSE.txt)
 
 Summary: Fermi surface generation, analysis and visualisation.
 
