@@ -45,7 +45,6 @@ requirements:
 test:
   imports:
     - ifermi
-    - ifermi.tests
   commands:
     - pip check
     - ifermi --help
