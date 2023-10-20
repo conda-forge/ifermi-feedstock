@@ -1,5 +1,5 @@
 {% set name = "ifermi" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ifermi-{{ version }}.tar.gz
-  sha256: 0615144f5cc25d71975b684c3f31e237c42ca948edf29268c17bba8fc064f1f3
+  sha256: 2e6592a02b68316977e6d6bde89be5dc72689934cfad84186f94b461f31c5997
 
 build:
   number: 0
