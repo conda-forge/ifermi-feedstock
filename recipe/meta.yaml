@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ifermi-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ifermi-{{ version }}.tar.gz
   sha256: e5f2eeee19c1208d863779d86e324adb5d254c0dfa24c432a1b0d6a944297697
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - ifermi = ifermi.cli:cli
   script: {{ PYTHON }} -m pip install . -vv
@@ -20,8 +20,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - packaging
+    - setuptools
   run:
     - boltztrap2
     - click
@@ -35,7 +36,7 @@ requirements:
     - psutil
     - pyfftw
     - pymatgen >=2017.12.30
-    - python >=3.6
+    - python >={{ python_min }}
     - scikit-image
     - scipy
     - spglib
@@ -50,6 +51,7 @@ test:
     - ifermi --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/fermisurfaces/IFermi
