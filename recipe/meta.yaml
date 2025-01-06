@@ -22,6 +22,7 @@ requirements:
     - pip
     - python {{ python_min }}
     - packaging
+    - setuptools
   run:
     - boltztrap2
     - click
