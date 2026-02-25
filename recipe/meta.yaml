@@ -1,5 +1,5 @@
 {% set name = "ifermi" %}
-{% set version = "0.3.6" %}
+{% set version = "0.3.7" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ifermi-{{ version }}.tar.gz
-  sha256: e5f2eeee19c1208d863779d86e324adb5d254c0dfa24c432a1b0d6a944297697
+  sha256: 142528ad302f511e31b641d40f42dde2d412bb1b7a4cccf42d0c04be2ae14a95
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - ifermi = ifermi.cli:cli
   script: {{ PYTHON }} -m pip install . -vv
