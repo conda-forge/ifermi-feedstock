@@ -1,26 +1,29 @@
-{% set name = "ifermi" %}
-{% set version = "0.3.7" %}
+schema_version: 1
 
+context:
+  name: ifermi
+  version: "0.3.7"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ifermi-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/ifermi-${{ version }}.tar.gz
   sha256: 142528ad302f511e31b641d40f42dde2d412bb1b7a4cccf42d0c04be2ae14a95
 
 build:
-  number: 0
-  entry_points:
-    - ifermi = ifermi.cli:cli
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
   noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - ifermi = ifermi.cli:cli
 
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - packaging
     - setuptools
   run:
@@ -36,27 +39,28 @@ requirements:
     - psutil
     - pyfftw
     - pymatgen >=2017.12.30
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - scikit-image
     - scipy
     - spglib
     - tabulate
     - trimesh
 
-test:
-  imports:
-    - ifermi
-  commands:
-    - pip check
-    - ifermi --help
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - ifermi
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - ifermi --help
 
 about:
-  home: https://github.com/fermisurfaces/IFermi
   license: MIT
-  license_family: MIT
   license_file: LICENSE
   summary: Fermi surface generation, analysis and visualisation.
   description: |
@@ -65,8 +69,9 @@ about:
     Fermi slices. The goal of the library is to provide fully featured
     FermiSurface and FermiSlice objects that allow for easy manipulation
     and analysis.
-  doc_url: https://fermisurfaces.github.io/IFermi
-  dev_url: https://github.com/fermisurfaces/IFermi
+  homepage: https://github.com/fermisurfaces/IFermi
+  repository: https://github.com/fermisurfaces/IFermi
+  documentation: https://fermisurfaces.github.io/IFermi
 
 extra:
   recipe-maintainers:
