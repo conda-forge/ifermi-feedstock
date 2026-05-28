@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: ifermi
-  version: "0.3.7"
+  version: "0.3.8"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/ifermi-${{ version }}.tar.gz
-  sha256: 142528ad302f511e31b641d40f42dde2d412bb1b7a4cccf42d0c04be2ae14a95
+  sha256: 69f8a613b9e31e75b44b7cc34d9b7365e4b795479e86174bf78b627006e1cb4e
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
